@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#D7262D</color>
+    <color name="colorPrimaryDark">#D4232D</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorGrounding">#fff5f5f5</color>
+    <color name="colorForeground">#ffffff</color>
+    <color name="colorDivider">#ffe0e0e0</color>
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+
+    <color name="white_press">#e9e9e9</color>
+    <color name="white">#FFFFFF</color>
+    <color name="startColor">#D4232D</color>
+    <color name="centerColor">#EA424C</color>
+    <color name="endColor">#EE6C46</color>
+    <color name="startColorPress">#AF1922</color>
+    <color name="endColorPress">#C9623A</color>
+    <color name="whiteTransparent">#50ffffff</color>
+    <color name="whiteTransparent80">#80ffffff</color>
+    <color name="brandPrimary">#D7262D</color>
+    <color name="brandSecondary">#c5272d</color>
+    <color name="blue">#0177C1</color>
+    <color name="red">#CE1B25</color>
+    <color name="darkGray">#6F7C80</color>
+    <color name="lightGray">#EEEEEF</color>
+    <color name="midGray">#B7BDBF</color>
+    <color name="error">#990000</color>
+
+    <color name="colorDividerListview">@color/colorPrimary  </color>
+</resources>

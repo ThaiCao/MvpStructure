@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvUser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnConfirm"/>
+
+    <com.mvp.structure.widgets.styledcontrol.StyledButton
+        android:id="@+id/btnConfirm"
+        style="@style/NormalButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="@dimen/small_margin"
+        android:background="@drawable/background_common_button"
+        android:layout_above="@+id/btnClose"
+        android:stateListAnimator="@null"
+        android:text="Confirm"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <com.mvp.structure.widgets.styledcontrol.StyledButton
+        android:id="@+id/btnClose"
+        style="@style/NormalButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="@dimen/small_margin"
+        android:background="@drawable/background_white_solid_red_border_no_state"
+        android:layout_alignParentBottom="true"
+        android:stateListAnimator="@null"
+        android:text="Close"
+        android:textAllCaps="true"
+        android:textColor="@color/textPrimary"
+        android:textStyle="bold" />
+</RelativeLayout>

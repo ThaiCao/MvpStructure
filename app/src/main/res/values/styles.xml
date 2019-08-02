@@ -1,0 +1,135 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/colorGrounding</item>
+        <item name="android:listDivider">@drawable/bg_list_divider</item>
+
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textColorSecondary">@color/textSecondary</item>
+
+        <!-- Support library compatibility -->
+        <item name="elevation">0dp</item>
+
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppBaseTheme.Translucent" />
+
+    <style name="AppBaseTheme.Translucent.StateBar" />
+
+    <!-- 启动界面style -->
+    <style name="AppBaseTheme.Launcher" parent="AppBaseTheme.Translucent">
+        <item name="android:windowBackground">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="BottomNavigationViewTheme" parent="AppTheme"/>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.AppBarOverlayToolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <item name="android:textSize">16sp</item>
+        <!--<item name="fontPath">fonts/SF UI Text Regular.otf</item>-->
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CustomTextStyle" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowMinWidthMajor">97%</item>
+        <item name="android:windowMinWidthMinor">97%</item>
+    </style>
+
+    <style name="AlertDialogTheme80" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:windowMinWidthMajor">65%</item>
+        <item name="android:windowMinWidthMinor">65%</item>
+    </style>
+
+    <style name="AlertDialogTheme100" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+    </style>
+
+    <style name="ActivityDialog" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="ShimmerLayout">
+        <item name="shimmer_color">@color/whiteTransparent</item>
+        <item name="shimmer_animation_duration">1000</item>
+        <item name="shimmer_gradient_center_color_width">0.9</item>
+        <item name="shimmer_mask_width">1</item>
+    </style>
+
+    <!--//////////////// Style for TextView START /////////////////////-->
+    <style name="BaseTextView" parent="@android:style/TextAppearance.Holo.Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Large.Inverse</item>
+    </style>
+
+    <style name="TinyText" parent="BaseTextView">
+        <item name="android:textSize">@dimen/font_size_tiny</item>
+    </style>
+    <style name="SmallText" parent="BaseTextView">
+        <item name="android:textSize">@dimen/font_size_small</item>
+    </style>
+
+    <style name="NormalText" parent="BaseTextView">
+        <item name="android:textSize">@dimen/font_size_normal</item>
+    </style>
+    <style name="LargeText" parent="BaseTextView">
+        <item name="android:textSize">@dimen/font_size_large</item>
+    </style>
+
+    <!--//////////////// Style for TextView END /////////////////////-->
+
+    <!--//////////////// Style for Button START /////////////////////-->
+    <style name="BaseButton" parent="@android:style/TextAppearance.Holo.Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="SmallButton" parent="BaseButton">
+        <item name="android:textSize">@dimen/font_size_small</item>
+    </style>
+
+    <style name="NormalButton" parent="BaseButton">
+        <item name="android:textSize">@dimen/font_size_normal</item>
+    </style>
+
+    <style name="LargeButton" parent="BaseButton">
+        <item name="android:textSize">@dimen/font_size_large</item>
+    </style>
+
+    <!--//////////////// Style for Button END /////////////////////-->
+
+</resources>

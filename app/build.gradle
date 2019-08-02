@@ -1,0 +1,89 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+
+def cfg = rootProject.ext.configuration
+def libs = rootProject.ext.libraries
+
+android {
+    compileSdkVersion cfg.compileVersion
+    buildToolsVersion cfg.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.mvp.structure"
+        minSdkVersion cfg.minSdk
+        targetSdkVersion cfg.targetSdk
+        versionCode cfg.versionCode
+        versionName cfg.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    dexOptions {
+        preDexLibraries = false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+    realm {
+        syncEnabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // butterknife
+    implementation "com.jakewharton:butterknife:$libs.butterknife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$libs.butterknife"
+
+    //support
+    implementation "androidx.appcompat:appcompat:$libs.appcompat"
+    implementation "androidx.recyclerview:recyclerview:$libs.recyclerview"
+    implementation "androidx.gridlayout:gridlayout:$libs.gridlayout"
+    implementation "androidx.cardview:cardview:$libs.cardview"
+    implementation "com.google.android.material:material:$libs.material"
+    implementation "androidx.constraintlayout:constraintlayout:$libs.constraintLayout"
+
+    // rxjava
+    implementation "io.reactivex.rxjava2:rxandroid:$libs.rxandroid"
+    implementation "io.reactivex.rxjava2:rxjava:$libs.rxjava"
+
+    // easy permission
+    implementation "pub.devrel:easypermissions:$libs.easyPermission"
+
+    //facebook animation
+    implementation "io.supercharge:shimmerlayout:$libs.shimmerlayout"
+
+    // otto
+    implementation "com.squareup:otto:$libs.otto"
+
+    // gson
+    implementation "com.google.code.gson:gson:$libs.gson"
+
+    //ImageLoader
+    implementation "com.github.bumptech.glide:glide:$libs.glide"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$libs.glide"
+    implementation("com.github.bumptech.glide:recyclerview-integration:$libs.glide") {
+        // Excludes the support library because it's already included by Glide.
+        transitive = false
+    }
+    annotationProcessor "com.github.bumptech.glide:compiler:$libs.glide"
+
+    // multidex
+    implementation "com.android.support:multidex:$libs.multidex"
+
+    //network
+    implementation "com.squareup.retrofit2:retrofit:$libs.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$libs.retrofit"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
