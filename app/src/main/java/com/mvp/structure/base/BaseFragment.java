@@ -22,11 +22,14 @@ import butterknife.Unbinder;
 public abstract class BaseFragment extends Fragment {
     private View root = null;
     private Unbinder unbinder;
+    protected boolean firstLoad = true;
 
     @LayoutRes
     protected abstract int getLayoutId();
 
     /*******************************init area*********************************/
+
+    protected abstract void initTitle();
 
     protected abstract void initData(Bundle savedInstanceState);
 
@@ -58,19 +61,25 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        int resId = getLayoutId();
-        root = inflater.inflate(resId,container,false);
+        if(firstLoad) {
+            int resId = getLayoutId();
+            root = inflater.inflate(resId,container,false);
+        }
         return root;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initData(savedInstanceState);
-        unbinder = ButterKnife.bind(this,root);
-        initWidget(savedInstanceState);
-        initClick();
-        processLogic();
+        if(firstLoad) {
+            initData(savedInstanceState);
+            unbinder = ButterKnife.bind(this,root);
+            initWidget(savedInstanceState);
+            initClick();
+            processLogic();
+            firstLoad = false;
+        }
+        initTitle();
     }
 
     @Override

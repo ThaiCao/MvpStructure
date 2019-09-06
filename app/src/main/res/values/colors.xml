@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#D7262D</color>
+    <color name="colorPrimary_opacity_60">#40D7262D</color>
     <color name="colorPrimaryDark">#D4232D</color>
+    <color name="colorPrimaryDark_opacity_60">#40D4232D</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorGrounding">#fff5f5f5</color>
     <color name="colorForeground">#ffffff</color>
@@ -10,12 +12,17 @@
     <color name="textSecondary">#757575</color>
 
     <color name="white_press">#e9e9e9</color>
-    <color name="white">#FFFFFF</color>
+    <!--<color name="white">#FFFFFF</color>-->
     <color name="startColor">#D4232D</color>
+    <color name="startColor_opacity_60">#40D4232D</color>
     <color name="centerColor">#EA424C</color>
+    <color name="centerColor_opacity_60">#40EA424C</color>
     <color name="endColor">#EE6C46</color>
+    <color name="endColor_opacity_60">#60EE6C46</color>
     <color name="startColorPress">#AF1922</color>
+    <color name="startColorPress_opacity_60">#40AF1922</color>
     <color name="endColorPress">#C9623A</color>
+    <color name="endColorPress_opacity_60">#40C9623A</color>
     <color name="whiteTransparent">#50ffffff</color>
     <color name="whiteTransparent80">#80ffffff</color>
     <color name="brandPrimary">#D7262D</color>
@@ -24,8 +31,23 @@
     <color name="red">#CE1B25</color>
     <color name="darkGray">#6F7C80</color>
     <color name="lightGray">#EEEEEF</color>
+    <color name="lightGray_opacity_40">#40EEEEEF</color>
     <color name="midGray">#B7BDBF</color>
+    <color name="midGray_opacity_60">#40B7BDBF</color>
     <color name="error">#990000</color>
+    <color name="icon_enabled">#FFFFFFFF</color>
+    <color name="icon_disabled">#FF63727B</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="black_20">#33000000</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_black_opacity_35">#59000000</color>
+    <color name="color_white_opacity_35">#59ffffff</color>
+    <color name="color_292929">#292929</color>
+    <color name="color_black_opacity_40">#66000000</color>
+    <color name="orange_opacity_60">#40F38D0D</color>
+    <color name="favorite_button">#F38D0D</color>
 
     <color name="colorDividerListview">@color/colorPrimary  </color>
 </resources>

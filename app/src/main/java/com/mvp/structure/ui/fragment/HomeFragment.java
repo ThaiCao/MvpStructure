@@ -1,30 +1,34 @@
 package com.mvp.structure.ui.fragment;
 
 import android.os.Bundle;
+import android.view.View;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mvp.structure.R;
-import com.mvp.structure.adapter.UsersAdapter;
+import com.mvp.structure.adapter.HomeAdapter;
 import com.mvp.structure.base.BaseMVPFragment;
-import com.mvp.structure.data.bean.response.UserResponse;
-import com.mvp.structure.data.bean.response.base.ResponseError;
 import com.mvp.structure.mvp.contract.HomeFragmentContract;
 import com.mvp.structure.mvp.presenter.HomeFragmentPresenterImpl;
-import com.mvp.structure.widgets.RecyclerViewDividerItemDecoration;
+import com.mvp.structure.widgets.interfaces.OnRecyclerViewItemClickListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 
 /**
  * Created by thai.cao on 7/31/2019.
  */
-public class HomeFragment extends BaseMVPFragment<HomeFragmentContract.Presenter> implements HomeFragmentContract.View {
+public class HomeFragment extends BaseMVPFragment<HomeFragmentContract.Presenter> implements HomeFragmentContract.View, OnRecyclerViewItemClickListener {
 
-    @BindView(R.id.rcvUser)
-    RecyclerView rcvUser;
+    @BindView(R.id.rvHome)
+    RecyclerView rvHome;
 
-    private UsersAdapter adapter;
+    private HomeAdapter adapter;
+
+    private List<String> homes = new ArrayList<>();
 
     @Override
     protected HomeFragmentContract.Presenter bindPresenter() {
@@ -47,8 +51,20 @@ public class HomeFragment extends BaseMVPFragment<HomeFragmentContract.Presenter
     }
 
     @Override
-    protected void initData(Bundle savedInstanceState) {
+    protected void initTitle() {
+        setTitle(getString(R.string.app_name));
+        displayBackButtonToolbar(false);
+    }
 
+    @Override
+    protected void initData(Bundle savedInstanceState) {
+        homes = new ArrayList<>();
+        homes.add(getString(R.string.app_name));
+        homes.add(getString(R.string.app_name));
+        homes.add(getString(R.string.app_name));
+        homes.add(getString(R.string.app_name));
+        homes.add(getString(R.string.app_name));
+        homes.add(getString(R.string.app_name));
     }
 
     @Override
@@ -58,30 +74,24 @@ public class HomeFragment extends BaseMVPFragment<HomeFragmentContract.Presenter
 
     @Override
     protected void initWidget(Bundle savedInstanceState) {
-        setTitle("Home");
-        displayBackButtonToolbar(true);
-        adapter = new UsersAdapter();
-//            Log.e("TEST_FRAGMENT","HotFragment initview");
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(getView().getContext());
-        layoutManager.setOrientation(RecyclerView.VERTICAL);
-        rcvUser.setLayoutManager(layoutManager);
-        rcvUser.addItemDecoration(new RecyclerViewDividerItemDecoration(getActivity()));
+        adapter = new HomeAdapter(this);
+        adapter.addItems(homes);
+        final GridLayoutManager layoutManager = new GridLayoutManager(getView().getContext(),
+                2);
+        rvHome.setLayoutManager(layoutManager);
+//        rvHome.addItemDecoration(new RecyclerViewDividerItemDecoration(getActivity()));
 
-        rcvUser.setAdapter(adapter);
+        rvHome.setAdapter(adapter);
     }
 
     @Override
     protected void processLogic() {
         super.processLogic();
-        mPresenter.getUserGitHub("language");
+
     }
 
     @Override
-    public void onGetUserGitHubSuccess(UserResponse data) {
-        adapter.addItems(data.getUsers());
-    }
+    public void onItemClick(int position, View view) {
 
-    @Override
-    public void onGetUserGitHubError(ResponseError error) {
     }
 }
